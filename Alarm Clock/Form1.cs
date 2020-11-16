@@ -76,36 +76,62 @@ namespace Alarm_Clock
             label1.Text = "Stopped!";
         }
 
-        bool end = false;
+        bool end = true;
         private void button3_Click(object sender, EventArgs e)
+        {
+            end = false;
+            ThreadStart thrdStrt = new ThreadStart(playAudio);
+            Thread thread = new Thread(thrdStrt);
+            thread.Start();
+
+            ManageBtns();
+        }
+
+        private void ManageBtns()
+        {
+            if (!end)
+            {
+                button3.Enabled = false;
+                button4.Enabled = true;
+            }
+            else
+            {
+                button3.Enabled = true;
+                button4.Enabled = false;
+            }
+        }
+
+        SoundPlayer media = null;
+        private void playAudio()
         {
             try
             {
-                while(!end)
+                while (!end)
                 {
                     Thread.Sleep(Convert.ToInt32(textBox1.Text) * 1000);
-                    playAudio();
+                    media = new SoundPlayer();
+                    media.SoundLocation = @"C:\Windows\Media\Alarm09.wav";
+                    media.PlaySync();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void playAudio()
-        {
-            SoundPlayer media = new SoundPlayer();
-            media.SoundLocation = @"C:\Windows\Media\Alarm09.wav";
-            media.PlaySync();
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             if(!end)
+            {
                 end = true;
-            if(Thread.CurrentThread.ThreadState == ThreadState.Running)
-                Thread.CurrentThread.Abort();
+                if (media != null)
+                {
+                    media.Stop();
+                    media = null;
+                }
+            }
+            ManageBtns();
         }
     }
 }
