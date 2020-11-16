@@ -1,0 +1,9 @@
+D:\Running On\C#\VisualStudio\Alarm Clock\Alarm Clock\bin\Debug\Alarm Clock.exe.config
+D:\Running On\C#\VisualStudio\Alarm Clock\Alarm Clock\bin\Debug\Alarm Clock.exe
+D:\Running On\C#\VisualStudio\Alarm Clock\Alarm Clock\bin\Debug\Alarm Clock.pdb
+D:\Running On\C#\VisualStudio\Alarm Clock\Alarm Clock\obj\Debug\Alarm Clock.csprojResolveAssemblyReference.cache
+D:\Running On\C#\VisualStudio\Alarm Clock\Alarm Clock\obj\Debug\Alarm_Clock.Form1.resources
+D:\Running On\C#\VisualStudio\Alarm Clock\Alarm Clock\obj\Debug\Alarm_Clock.Properties.Resources.resources
+D:\Running On\C#\VisualStudio\Alarm Clock\Alarm Clock\obj\Debug\Alarm Clock.csproj.GenerateResource.Cache
+D:\Running On\C#\VisualStudio\Alarm Clock\Alarm Clock\obj\Debug\Alarm Clock.exe
+D:\Running On\C#\VisualStudio\Alarm Clock\Alarm Clock\obj\Debug\Alarm Clock.pdb
